@@ -63,3 +63,7 @@ the used client id and secret, use the Employee Api underneath
 ```
 
 This function queries all Employees and returns an array of employee objects.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
