@@ -34,8 +34,8 @@ environment, checking for `PERSONIO_CLIENT_ID` and `PERSONIO_CLIENT_SECRET` to
 be set. You can set those variables in your console by running:
 
 ```bash
-  export PERSONIO_CLIENT_ID=client_id
-  export PERSONIO_CLIENT_SECRET=client_secret.
+  $ export PERSONIO_CLIENT_ID=client_id
+  $ export PERSONIO_CLIENT_SECRET=client_secret.
 ```
 
 The client id and secret are provided by personio. Log into your account
