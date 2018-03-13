@@ -1,3 +1,4 @@
+# Api errors to throw on http failures
 module ApiErrors
   # Custom error to throw unless personio returns a success
   class PersonioServerError < StandardError

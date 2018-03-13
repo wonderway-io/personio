@@ -1,5 +1,6 @@
 # Employee Model
 class EmployeeModel
+  # Personio fields to set on the employee model
   FIELDS = %i[
     id first_name last_name email status position supervisor employment_type
   ].freeze
