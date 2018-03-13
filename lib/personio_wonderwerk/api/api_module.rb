@@ -1,4 +1,5 @@
 require 'httparty'
+require_relative 'api_errors'
 
 # Api mixin to abstract query functionality
 module ApiModule
@@ -18,6 +19,9 @@ module ApiModule
       }
     )
 
+    # Check if successful
+    check_response(response)
+
     # Update auth token
     @config.auth_token = response.headers['Authorization'].gsub('Bearer ', '')
 
@@ -34,7 +38,17 @@ module ApiModule
         "client_secret=#{@config.client_secret}"
     )
 
+    # Check if successful
+    check_response(response)
+
     # Update auth token
     @config.auth_token = response.parsed_response['data']['token']
+  end
+
+  def check_response(response)
+    parsed_response = response.parsed_response
+
+    raise ApiErrors::PersonioServerError, parsed_response['error']['message'] \
+      unless parsed_response['success']
   end
 end
