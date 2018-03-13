@@ -2,6 +2,8 @@
 
 Ruby wrapper for the [personio](https://www.personio.de/) API.
 
+Check out the yard documentation here: [doc](https://wonderwerk.github.io/personio/)
+
 ## Installation
 
 Add this line to your application's Gemfile:
