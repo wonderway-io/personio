@@ -64,6 +64,29 @@ the used client id and secret, use the Employee Api underneath
 
 This function queries all Employees and returns an array of employee objects.
 
+### Initializable API
+
+Sometimes you might want to hold several instances of the personio api, in order
+to query for multiple organisations simultaneously.
+To achieve this, require `personio_wonderwerk/api` instead of `personio_wonderwerk`.
+This makes a class `PersonioWonderwerkApi` available, which takes the same
+arguments as `PersonioWonderwerk` to initialize and exposes the same endpoints.
+
+For instance, to query all employees:
+
+```ruby
+  require 'personio_wonderwerk/api'
+
+  # initialize the first api
+  api = PersonioWonderwerkApi.new(
+    client_id: '<my_id>',
+    client_secret: '<my_secret>'
+  )
+
+  # get all employees
+  employees = api.employees.all
+```
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
