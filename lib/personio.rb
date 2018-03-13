@@ -1,7 +1,7 @@
-require 'personio_wonderwerk/api/employees_api'
+require 'personio/api/employees_api'
 
 # Personio entry point
-module PersonioWonderwerk
+module Personio
   # Personio configuration
   class Configuration
     attr_accessor :client_id
@@ -17,7 +17,7 @@ module PersonioWonderwerk
 
   # Retrieve the configation object
   #
-  # @return [{PersonioWonderwerk::Configuration configuration}]
+  # @return [{Personio::Configuration configuration}]
   #    the configuration object
   def self.configuration
     @configuration ||= Configuration.new

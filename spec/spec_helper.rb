@@ -1,6 +1,6 @@
 require 'bundler/setup'
 require 'helpers/api'
-require 'personio_wonderwerk'
+require 'personio'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

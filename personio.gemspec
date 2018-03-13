@@ -1,10 +1,10 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'personio_wonderwerk/version'
+require 'personio/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'personio_wonderwerk'
-  spec.version       = PersonioWonderwerk::VERSION
+  spec.name          = 'personio'
+  spec.version       = Personio::VERSION
   spec.authors       = ['rouvenherzog']
   spec.email         = ['rouven_herzog@hotmail.de']
 

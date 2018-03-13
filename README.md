@@ -1,4 +1,4 @@
-# PersonioWonderwerk
+# Personio
 
 Ruby wrapper for the [personio](https://www.personio.de/) API.
 
@@ -7,7 +7,7 @@ Ruby wrapper for the [personio](https://www.personio.de/) API.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'personio_wonderwerk'
+gem 'personio'
 ```
 
 And then execute:
@@ -16,14 +16,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install personio_wonderwerk
+    $ gem install personio
 
 ## Usage
 
-Require the personio_wonderwerk gem in your code.
+Require the personio gem in your code.
 
 ```ruby
-require 'personio_wonderwerk'
+require 'personio'
 ```
 
 ### Configuration
@@ -44,9 +44,9 @@ and download the strings under api keys in the settings.
 Alternatively you can configure the gem in it's configuration block.
 
 ```ruby
-  require 'personio_wonderwerk'
+  require 'personio'
 
-  PersonioWonderwerk.configure do |config|
+  Personio.configure do |config|
     config.client_id = client_id
     config.client_secret = client_secret
   end
@@ -56,10 +56,10 @@ Alternatively you can configure the gem in it's configuration block.
 
 In order to query all employees from the configured personio account, given by
 the used client id and secret, use the Employee Api underneath
-`PersonioWonderwerk.employees`:
+`Personio.employees`:
 
 ```ruby
-  PersonioWonderwerk.employees.all
+  Personio.employees.all
 ```
 
 This function queries all Employees and returns an array of employee objects.
@@ -68,17 +68,17 @@ This function queries all Employees and returns an array of employee objects.
 
 Sometimes you might want to hold several instances of the personio api, in order
 to query for multiple organisations simultaneously.
-To achieve this, require `personio_wonderwerk/api` instead of `personio_wonderwerk`.
-This makes a class `PersonioWonderwerkApi` available, which takes the same
-arguments as `PersonioWonderwerk` to initialize and exposes the same endpoints.
+To achieve this, require `personio/api` instead of `personio`.
+This makes a class `PersonioApi` available, which takes the same
+arguments as `Personio` to initialize and exposes the same endpoints.
 
 For instance, to query all employees:
 
 ```ruby
-  require 'personio_wonderwerk/api'
+  require 'personio/api'
 
   # initialize the first api
-  api = PersonioWonderwerkApi.new(
+  api = PersonioApi.new(
     client_id: '<my_id>',
     client_secret: '<my_secret>'
   )
