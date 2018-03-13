@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['rouven_herzog@hotmail.de']
 
   spec.summary       = 'Personio API wrapper for ruby applications.'
-  spec.homepage      = 'https://www.wonderwerk.co'
+  spec.homepage      = 'https://wonderwerk.github.io/personio'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the
