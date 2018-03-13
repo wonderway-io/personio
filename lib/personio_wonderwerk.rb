@@ -8,9 +8,9 @@ module PersonioWonderwerk
     attr_accessor :client_secret
     attr_accessor :auth_token
 
-    def initialize
-      @client_id = ENV['PERSONIO_CLIENT_ID'] || nil
-      @client_secret = ENV['PERSONIO_CLIENT_SECRET'] || nil
+    def initialize(args = {})
+      @client_id = args[:client_id] || ENV['PERSONIO_CLIENT_ID']
+      @client_secret = args[:client_secret] || ENV['PERSONIO_CLIENT_SECRET']
       @auth_token = nil
     end
   end
