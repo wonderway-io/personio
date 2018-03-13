@@ -9,16 +9,14 @@ Check out the yard documentation here: [doc](https://wonderwerk.github.io/person
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'personio'
+    gem 'personio', github: 'wonderwerk/personio'
 ```
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install personio
+    
+This will load the personio gem from the github repository and make it available in your code.
 
 ## Usage
 
