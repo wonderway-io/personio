@@ -6,4 +6,11 @@ module ApiErrors
       super
     end
   end
+
+  # Authentication error that is thrown for a response status of 403
+  class PersonioAuthenticationError < StandardError
+    def initialize(msg = 'Personio authentication failure.')
+      super
+    end
+  end
 end

@@ -48,7 +48,19 @@ module ApiModule
   def check_response(response)
     parsed_response = response.parsed_response
 
-    raise ApiErrors::PersonioServerError, parsed_response['error']['message'] \
-      unless parsed_response['success']
+    # Everything is fine
+    return if parsed_response['success']
+
+    # Raise authentication error on 403
+    raise(
+      ApiErrors::PersonioAuthenticationError,
+      parsed_response['error']['message']
+    ) if response.code == 403
+
+    # Raise default error otherwise
+    raise(
+      ApiErrors::PersonioServerError,
+      parsed_response['error']['message']
+    )
   end
 end

@@ -15,7 +15,7 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-    
+
 This will load the personio gem from the github repository and make it available in your code.
 
 ## Usage
@@ -86,6 +86,21 @@ For instance, to query all employees:
   # get all employees
   employees = api.employees.all
 ```
+
+## Contribute
+
+Please contact the repository host if you wish to contribute to this gem.
+
+### Generating docs
+
+Before pushing to the docs please make sure that the docs are up to date by
+running:
+
+```bash
+  $ yard doc -o docs
+```
+
+The docs have to be committed along with the code changes.
 
 ## License
 

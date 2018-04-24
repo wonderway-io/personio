@@ -57,50 +57,52 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>Personio</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Personio">Personio</h1>
 
 <p>Ruby wrapper for the <a href="https://www.personio.de/">personio</a> API.</p>
 
-<p>Check out the yard documentation here: <a href="https://wonderwerk.github.io/personio/">doc</a></p>
+<p>Check out the yard documentation here: <a
+href="https://wonderwerk.github.io/personio/">doc</a></p>
 
-<h2>Installation</h2>
+<h2 id="label-Installation">Installation</h2>
 
 <p>Add this line to your application&#39;s Gemfile:</p>
 
-<pre class="code ruby"><code class="ruby">    <span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>github:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wonderwerk/personio</span><span class='tstring_end'>&#39;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>github:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>wonderwerk/personio</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
 <p>And then execute:</p>
 
-<pre class="code ruby"><code class="ruby">$ bundle
-</code></pre>
+<pre class="code ruby"><code class="ruby">$ bundle</code></pre>
 
-<p>This will load the personio gem from the github repository and make it available in your code.</p>
+<p>This will load the personio gem from the github repository and make it
+available in your code.</p>
 
-<h2>Usage</h2>
+<h2 id="label-Usage">Usage</h2>
 
 <p>Require the personio gem in your code.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
-<h3>Configuration</h3>
+<h3 id="label-Configuration">Configuration</h3>
 
-<p>A client id and a client secret have to be provided for the gem to be able to
-query the personio API. By default those values are retrieved from the
-environment, checking for <code>PERSONIO_CLIENT_ID</code> and <code>PERSONIO_CLIENT_SECRET</code> to
-be set. You can set those variables in your console by running:</p>
+<p>A client id and a client secret have to be provided for the gem to be able
+to query the personio API. By default those values are retrieved from the
+environment, checking for <code>PERSONIO_CLIENT_ID</code> and
+<code>PERSONIO_CLIENT_SECRET</code> to be set. You can set those variables
+in your console by running:</p>
 
-<pre class="code bash"><code class="bash">  $ export PERSONIO_CLIENT_ID=client_id
-  $ export PERSONIO_CLIENT_SECRET=client_secret.
-</code></pre>
+<pre class="code ruby"><code class="ruby">$ export PERSONIO_CLIENT_ID=client_id
+  $ export PERSONIO_CLIENT_SECRET=client_secret.</code></pre>
 
 <p>The client id and secret are provided by personio. Log into your account
 and download the strings under api keys in the settings.</p>
 
 <p>Alternatively you can configure the gem in it&#39;s configuration block.</p>
 
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio</span><span class='tstring_end'>&#39;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio</span><span class='tstring_end'>&#39;</span></span>
 
   <span class='const'><span class='object_link'><a href="Personio.html" title="Personio (module)">Personio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configure'><span class='object_link'><a href="Personio.html#configure-class_method" title="Personio.configure (method)">configure</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
     <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_client_id'>client_id</span> <span class='op'>=</span> <span class='id identifier rubyid_client_id'>client_id</span>
@@ -108,28 +110,30 @@ and download the strings under api keys in the settings.</p>
   <span class='kw'>end</span>
 </code></pre>
 
-<h3>Retrieving Employees</h3>
+<h3 id="label-Retrieving+Employees">Retrieving Employees</h3>
 
-<p>In order to query all employees from the configured personio account, given by
-the used client id and secret, use the Employee Api underneath
+<p>In order to query all employees from the configured personio account, given
+by the used client id and secret, use the Employee Api underneath
 <code>Personio.employees</code>:</p>
 
-<pre class="code ruby"><code class="ruby">  <span class='const'><span class='object_link'><a href="Personio.html" title="Personio (module)">Personio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_employees'><span class='object_link'><a href="Personio.html#employees-class_method" title="Personio.employees (method)">employees</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="Personio.html" title="Personio (module)">Personio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_employees'><span class='object_link'><a href="Personio.html#employees-class_method" title="Personio.employees (method)">employees</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
 </code></pre>
 
-<p>This function queries all Employees and returns an array of employee objects.</p>
+<p>This function queries all Employees and returns an array of employee
+objects.</p>
 
-<h3>Initializable API</h3>
+<h3 id="label-Initializable+API">Initializable API</h3>
 
-<p>Sometimes you might want to hold several instances of the personio api, in order
-to query for multiple organisations simultaneously.
-To achieve this, require <code>personio/api</code> instead of <code>personio</code>.
-This makes a class <code>PersonioApi</code> available, which takes the same
-arguments as <code>Personio</code> to initialize and exposes the same endpoints.</p>
+<p>Sometimes you might want to hold several instances of the personio api, in
+order to query for multiple organisations simultaneously. To achieve this,
+require <code>personio/api</code> instead of <code>personio</code>. This
+makes a class <code>PersonioApi</code> available, which takes the same
+arguments as <code>Personio</code> to initialize and exposes the same
+endpoints.</p>
 
 <p>For instance, to query all employees:</p>
 
-<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio/api</span><span class='tstring_end'>&#39;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personio/api</span><span class='tstring_end'>&#39;</span></span>
 
   <span class='comment'># initialize the first api
 </span>  <span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="PersonioApi.html" title="PersonioApi (class)">PersonioApi</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="PersonioApi.html#initialize-instance_method" title="PersonioApi#initialize (method)">new</a></span></span><span class='lparen'>(</span>
@@ -141,13 +145,14 @@ arguments as <code>Personio</code> to initialize and exposes the same endpoints.
 </span>  <span class='id identifier rubyid_employees'>employees</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_employees'>employees</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
 </code></pre>
 
-<h2>License</h2>
+<h2 id="label-License">License</h2>
 
-<p>The gem is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+<p>The gem is available as open source under the terms of the <a
+href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Mar 13 11:18:07 2018 by
+  Generated on Tue Apr 24 12:41:43 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>
