@@ -38,8 +38,8 @@ module Personio
   # @param auth_token [String] the auth token retrieved by authenticating with
   #     personio. Can be pre-populated and always contains the latest auth token
   #     provided by the api
-  # @param mocks [Object] an object containing the data to return instead of real#
-  #   personio requests.
+  # @param mocks [Object] an object containing the data to return instead of
+  #     real personio requests.
   def self.configure
     yield configuration
 
