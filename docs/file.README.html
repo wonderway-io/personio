@@ -145,6 +145,51 @@ endpoints.</p>
 </span>  <span class='id identifier rubyid_employees'>employees</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_employees'>employees</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
 </code></pre>
 
+<h3 id="label-Testing">Testing</h3>
+
+<p>This gem comes with the option to mock the api requests. When configuring
+personio, simply provide response data for the specific endpoints needed
+and all requests will be mocked with the provided data.#</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Configure personio
+</span>  <span class='const'><span class='object_link'><a href="Personio.html" title="Personio (module)">Personio</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configure'><span class='object_link'><a href="Personio.html#configure-class_method" title="Personio.configure (method)">configure</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+    <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_mocks'>mocks</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='label'>employees:</span> <span class='lbracket'>[</span>
+        <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>first_name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Robert</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>last_name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Jacobs</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>robert.jacobs@wonderwerk-sample.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gender</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>male</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>position</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Junior HR consultant</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>employment_type</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>internal</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>supervisor</span><span class='label_end'>&quot;:</span> <span class='lbrace'>{</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>first_name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sarah</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>last_name</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Becker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+            <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email</span><span class='label_end'>&quot;:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sarah.becker@wonderwerk-sample.com</span><span class='tstring_end'>&quot;</span></span>
+          <span class='rbrace'>}</span>
+        <span class='rbrace'>}</span>
+      <span class='rbracket'>]</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+</code></pre>
+
+<p>Now calling <code>Personio.employees.all</code> will return one employee:
+Robert Jacobs.</p>
+
+<h2 id="label-Contribute">Contribute</h2>
+
+<p>Please contact the repository host if you wish to contribute to this gem.</p>
+
+<h3 id="label-Generating+docs">Generating docs</h3>
+
+<p>Before pushing to the docs please make sure that the docs are up to date by
+running:</p>
+
+<pre class="code ruby"><code class="ruby">$ yard doc -o docs</code></pre>
+
+<p>The docs have to be committed along with the code changes.</p>
+
 <h2 id="label-License">License</h2>
 
 <p>The gem is available as open source under the terms of the <a
@@ -152,7 +197,7 @@ href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Tue Apr 24 12:41:43 2018 by
+  Generated on Fri May 18 11:56:54 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

@@ -1,4 +1,5 @@
 require 'personio/api/employees_api'
+require 'personio/api/api_stub'
 
 # Personio entry point
 module Personio
@@ -7,6 +8,7 @@ module Personio
     attr_accessor :client_id
     attr_accessor :client_secret
     attr_accessor :auth_token
+    attr_accessor :mocks
 
     def initialize(args = {})
       @client_id = args[:client_id] || ENV['PERSONIO_CLIENT_ID']
@@ -36,8 +38,13 @@ module Personio
   # @param auth_token [String] the auth token retrieved by authenticating with
   #     personio. Can be pre-populated and always contains the latest auth token
   #     provided by the api
+  # @param mocks [Object] an object containing the data to return instead of real#
+  #   personio requests.
   def self.configure
     yield configuration
+
+    return if @configuration.mocks.nil?
+    ApiStub.initialize @configuration.mocks
   end
 
   # Gets an instance of the personio employees api to query employees

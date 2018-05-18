@@ -3,6 +3,8 @@ require_relative 'api_errors'
 
 # Api mixin to abstract query functionality
 module ApiModule
+  BASE_PATH = 'https://api.personio.de/v1'.freeze
+
   # @param config [Object] Personio wonderwerk configuration object
   def initialize(config)
     @config = config
@@ -13,7 +15,7 @@ module ApiModule
 
     # Query the api
     response = HTTParty.get(
-      "https://api.personio.de/v1#{path}",
+      "#{ApiModule::BASE_PATH}#{path}",
       headers: {
         'Authorization' => "Bearer #{@config.auth_token}"
       }
@@ -33,7 +35,7 @@ module ApiModule
 
   def authenticate
     response = HTTParty.post(
-      'https://api.personio.de/v1/auth?' \
+      "#{ApiModule::BASE_PATH}/auth?" \
         "client_id=#{@config.client_id}&" \
         "client_secret=#{@config.client_secret}"
     )

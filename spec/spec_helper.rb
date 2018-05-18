@@ -1,5 +1,4 @@
 require 'bundler/setup'
-require 'helpers/api'
 require 'personio'
 
 RSpec.configure do |config|
@@ -12,6 +11,4 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-
-  config.include ApiHelper
 end

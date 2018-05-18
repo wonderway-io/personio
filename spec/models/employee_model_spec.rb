@@ -1,8 +1,11 @@
+require 'json'
 require 'spec_helper'
 
 RSpec.describe EmployeeModel do
   before(:all) do
-    employee = employees['data'].first
+    employee = JSON.parse(
+      File.read('spec/mocks/employees_api_response.json')
+    )['data'].first
     @model = EmployeeModel.new employee['attributes']
   end
 

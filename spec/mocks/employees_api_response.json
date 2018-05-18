@@ -1,0 +1,158 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "Employee",
+      "attributes": {
+        "id": {
+          "label": "id",
+          "value": 317603
+        },
+        "first_name": {
+          "label": "First name",
+          "value": "Sarah"
+        },
+        "last_name": {
+          "label": "Last name",
+          "value": "Becker"
+        },
+        "email": {
+          "label": "Email",
+          "value": "sarah.becker@wonderwerk-sample.com"
+        },
+        "gender": {
+          "label": "Gender",
+          "value": "female"
+        },
+        "status": {
+          "label": "Status",
+          "value": "active"
+        },
+        "position": {
+          "label": "Position",
+          "value": "HR Manager"
+        },
+        "supervisor": {
+          "label": "Supervisor",
+          "value": {
+            "type": "Employee",
+            "attributes": {
+              "id": {
+                "label": "id",
+                "value": 317600
+              },
+              "first_name": {
+                "label": "First name",
+                "value": "Robert"
+              },
+              "last_name": {
+                "label": "Last name",
+                "value": "Jacobs"
+              },
+              "email": {
+                "label": "Email",
+                "value": "robert.jacobs@wonderwerk-sample.com"
+              }
+            }
+          }
+        },
+        "employment_type": {
+          "label": "Employment type",
+          "value": "internal"
+        },
+        "weekly_working_hours": {
+          "label": "Weekly hours",
+          "value": "40"
+        },
+        "hire_date": {
+          "label": "Hire date",
+          "value": "2014-06-13T00:00:00+02:00"
+        },
+        "contract_end_date": {
+          "label": "Contract ends",
+          "value": null
+        },
+        "created_at": {
+          "label": "created_at",
+          "value": "2017-09-12T17:33:05+02:00"
+        },
+        "subcompany": {
+          "label": "Subcompany",
+          "value": null
+        },
+        "office": {
+          "label": "Office",
+          "value": {
+            "type": "Office",
+            "attributes": {
+              "id": 34283,
+              "name": "London Office"
+            }
+          }
+        },
+        "department": {
+          "label": "Department",
+          "value": {
+            "type": "Department",
+            "attributes": {
+              "id": 67898,
+              "name": "HR"
+            }
+          }
+        },
+        "cost_centers": {
+          "label": "Cost center",
+          "value": []
+        },
+        "vacation_day_balance": {
+          "label": "Vacation day balance",
+          "value": 48
+        },
+        "last_working_day": {
+          "label": "Last day of work",
+          "value": null
+        },
+        "dynamic_113342": {
+          "label": "Work phone",
+          "value": "+1 123 1245 1111"
+        },
+        "dynamic_113354": {
+          "label": "Employee ID",
+          "value": "14944"
+        },
+        "dynamic_113357": {
+          "label": "Custom attribute 1",
+          "value": ""
+        },
+        "dynamic_113345": {
+          "label": "Mobile phone",
+          "value": "+1 123 1245 1245"
+        },
+        "dynamic_113360": {
+          "label": "Custom attribute 2",
+          "value": ""
+        },
+        "dynamic_113366": {
+          "label": "Employment type",
+          "value": "Full time"
+        },
+        "dynamic_113348": {
+          "label": "Birthday",
+          "value": "1977-10-22T00:00:00+01:00"
+        },
+        "dynamic_113363": {
+          "label": "Custom attribute 3",
+          "value": 0
+        },
+        "dynamic_113369": {
+          "label": "Accounting group",
+          "value": "Fixed salary"
+        },
+        "dynamic_113351": {
+          "label": "LinkedIn",
+          "value": "https://www.linkedin.com/"
+        }
+      }
+    }
+  ]
+}

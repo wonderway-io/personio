@@ -87,6 +87,38 @@ For instance, to query all employees:
   employees = api.employees.all
 ```
 
+### Testing
+
+This gem comes with the option to mock the api requests.
+When configuring personio, simply provide response data for the specific
+endpoints needed and all requests will be mocked with the provided data.#
+
+```ruby
+  # Configure personio
+  Personio.configure do |config|
+    config.mocks = {
+      employees: [
+        {
+          "first_name": "Robert",
+          "last_name": "Jacobs",
+          "email": "robert.jacobs@wonderwerk-sample.com",
+          "gender": "male",
+          "status": "active",
+          "position": "Junior HR consultant",
+          "employment_type": "internal",
+          "supervisor": {
+            "first_name": "Sarah",
+            "last_name": "Becker",
+            "email": "sarah.becker@wonderwerk-sample.com"
+          }
+        }
+      ]
+    }
+  end
+```
+
+Now calling `Personio.employees.all` will return one employee: Robert Jacobs.
+
 ## Contribute
 
 Please contact the repository host if you wish to contribute to this gem.
