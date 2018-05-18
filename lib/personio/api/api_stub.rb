@@ -32,7 +32,7 @@ module ApiStub
       type: 'Employee',
       attributes: Hash[employee.map do |key, value|
         [key, {
-          label: key.split('_').map(&:capitalize).join(' '),
+          label: key.to_s.split('_').map(&:capitalize).join(' '),
           value: key == 'supervisor' ? create_employee(value) : value
         }]
       end]

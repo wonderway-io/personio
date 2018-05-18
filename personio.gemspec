@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'personio'
   spec.version       = Personio::VERSION
   spec.authors       = ['rouvenherzog']
-  spec.email         = ['rouven_herzog@hotmail.de']
+  spec.email         = ['rouven@wonderwerk.co']
 
   spec.summary       = 'Personio API wrapper for ruby applications.'
   spec.homepage      = 'https://wonderwerk.github.io/personio'
