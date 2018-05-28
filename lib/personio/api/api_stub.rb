@@ -5,7 +5,7 @@ include WebMock::API
 # Module to stub the api responses
 module ApiStub
   def self.initialize(mocks)
-    WebMock.enable!
+    enable_mocks!
 
     WebMock.stub_request(:any, /api.personio.de/)
     mock_auth
@@ -18,6 +18,15 @@ module ApiStub
       .to_return mock_success(
         token: 'mocked_token'
       )
+  end
+
+  def self.enable_mocks!
+    WebMock.enable!
+  end
+
+
+  def self.disable_mocks!
+    WebMock.disable!
   end
 
   def self.mock_employees(mocks = {})
