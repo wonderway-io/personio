@@ -17,6 +17,8 @@ RSpec.describe EmployeeModel do
     expect(@model.status).to eq(:active)
     expect(@model.position).to eq('HR Manager')
     expect(@model.employment_type).to eq('internal')
+    expect(@model.department).to eq('HR')
+    expect(@model.office).to eq('London Office')
   end
 
   it 'should contain a correct supervisor' do
