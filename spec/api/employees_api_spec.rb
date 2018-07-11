@@ -22,4 +22,16 @@ RSpec.describe EmployeesApi do
     supervisor = employees.first.supervisor
     expect(supervisor.email).to eq('sarah.becker@wonderwerk-sample.com')
   end
+
+  it 'should contain a department' do
+    employees = Personio.employees.all
+    user = employees.first
+    expect(user.department).to eq('HR')
+  end
+
+  it 'should contain an office' do
+    employees = Personio.employees.all
+    user = employees.first
+    expect(user.office).to eq('London')
+  end
 end

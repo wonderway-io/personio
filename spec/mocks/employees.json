@@ -7,6 +7,8 @@
     "status": "active",
     "position": "Junior HR consultant",
     "employment_type": "internal",
+    "department": "HR",
+    "office": "London",
     "supervisor": {
       "first_name": "Sarah",
       "last_name": "Becker",
@@ -21,6 +23,8 @@
     "status": "active",
     "position": "Senior HR consultant",
     "employment_type": "internal",
+    "department": "HR",
+    "office": "Berlin",
     "supervisor": {
       "first_name": "Sarah",
       "last_name": "Becker",

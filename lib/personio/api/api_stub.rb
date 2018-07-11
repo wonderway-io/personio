@@ -24,7 +24,6 @@ module ApiStub
     WebMock.enable!
   end
 
-
   def self.disable_mocks!
     WebMock.disable!
   end
@@ -42,9 +41,40 @@ module ApiStub
       attributes: Hash[employee.map do |key, value|
         [key, {
           label: key.to_s.split('_').map(&:capitalize).join(' '),
-          value: key.to_s == 'supervisor' ? create_employee(value) : value
+          value: parse_field_value(key, value)
         }]
       end]
+    }
+  end
+
+  def self.parse_field_value(key, value)
+    case key.to_s
+    when 'supervisor'
+      create_employee value
+    when 'department'
+      create_department value
+    when 'office'
+      create_office value
+    else
+      value
+    end
+  end
+
+  def self.create_department(department)
+    {
+      type: 'Department',
+      attributes: {
+        name: department
+      }
+    }
+  end
+
+  def self.create_office(office)
+    {
+      type: 'Office',
+      attributes: {
+        name: office
+      }
     }
   end
 
